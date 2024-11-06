@@ -2,9 +2,8 @@ package mkr1;
 
 import java.util.Base64;
 
-public class EncryptedMessage implements IMessage {
+public class EncryptedMessage extends DecoratedMessage {
 
-    private IMessage baseMessage;
     public String getContent() { return encrypt(baseMessage.getContent()); }
 
     private String encrypt(String plainText) {

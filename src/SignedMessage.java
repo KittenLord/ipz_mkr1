@@ -1,8 +1,7 @@
 package mkr1;
 
-public class SignedMessage implements IMessage {
+public class SignedMessage extends DecoratedMessage {
 
-    private IMessage baseMessage;
     private String signature;
     public String getContent() { return sign(baseMessage.getContent()); }
 

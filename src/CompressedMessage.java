@@ -1,8 +1,7 @@
 package mkr1;
 
-public class CompressedMessage implements IMessage {
+public class CompressedMessage extends DecoratedMessage {
 
-    private IMessage baseMessage;
     public String getContent() { return compress(baseMessage.getContent()); }
 
     private String compress(String uncompressed) {

@@ -2,9 +2,8 @@ package mkr1;
 
 import java.util.Date;
 
-public class TimestampedMessage implements IMessage {
+public class TimestampedMessage extends DecoratedMessage {
 
-    private IMessage baseMessage;
     private String timestamp;
     public String getContent() { return baseMessage.getContent() + "\nSent at: " + timestamp; }
 
