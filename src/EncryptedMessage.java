@@ -11,8 +11,7 @@ public class EncryptedMessage implements IMessage {
 
         // very secure 👍
         byte[] bytes = plainText.getBytes();
-        String encrypted = Base64.getEncoder().encodeToString(bytes);
-        return encrypted;
+        return Base64.getEncoder().encodeToString(bytes);
 
     }
 

@@ -10,22 +10,15 @@ public class CompressedMessage implements IMessage {
         StringBuilder compressed = new StringBuilder();
         boolean lastCharacterIsSpace = false;
         for(int i = 0; i < uncompressed.length(); i++) {
-
             char c = uncompressed.charAt(i);
-            if(c == ' ') {
-                if(lastCharacterIsSpace) continue;
-                lastCharacterIsSpace = true;
-            }
-            else {
-                lastCharacterIsSpace = false;
-            }
 
+            if(c == ' ' && lastCharacterIsSpace) continue;
+            lastCharacterIsSpace = (c == ' ');
+                
             compressed.append(c);
-
         }
 
         return compressed.toString();
-
     }
 
     public CompressedMessage(IMessage baseMessage) {
